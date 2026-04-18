@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores primárias -->
+    <color name="primary">#1B5E20</color>
+    <color name="primary_variant">#2E7D32</color>
+    <color name="secondary">#00897B</color>
+    <color name="secondary_variant">#00695C</color>
+
+    <!-- Cores de superfície -->
+    <color name="background">#FAFAFA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="error_color">#B00020</color>
+
+    <!-- Status de mensagens -->
+    <color name="status_pending">#F57C00</color>
+    <color name="status_sending">#1565C0</color>
+    <color name="status_sent">#2E7D32</color>
+    <color name="status_failed">#B00020</color>
+    <color name="status_cancelled">#757575</color>
+
+    <!-- WhatsApp green -->
+    <color name="whatsapp_green">#25D366</color>
+    <color name="whatsapp_dark">#128C7E</color>
+</resources>

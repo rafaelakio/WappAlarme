@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/alarmFragment">
+
+    <!-- Tela de Alarmes -->
+    <fragment
+        android:id="@+id/alarmFragment"
+        android:name="br.com.wappalarme.ui.alarm.AlarmFragment"
+        android:label="Alarmes"
+        tools:layout="@layout/fragment_alarm">
+
+        <action
+            android:id="@+id/action_alarmFragment_to_addEditAlarmFragment"
+            app:destination="@id/addEditAlarmFragment" />
+
+    </fragment>
+
+    <!-- Tela de Adicionar/Editar Alarme -->
+    <fragment
+        android:id="@+id/addEditAlarmFragment"
+        android:name="br.com.wappalarme.ui.alarm.AddEditAlarmFragment"
+        android:label="Novo Alarme"
+        tools:layout="@layout/fragment_add_edit_alarm">
+
+        <argument
+            android:name="alarmId"
+            app:argType="long"
+            android:defaultValue="-1" />
+
+    </fragment>
+
+    <!-- Tela de Mensagens Agendadas -->
+    <fragment
+        android:id="@+id/scheduledMessageFragment"
+        android:name="br.com.wappalarme.ui.message.ScheduledMessageFragment"
+        android:label="WhatsApp"
+        tools:layout="@layout/fragment_scheduled_message">
+
+        <action
+            android:id="@+id/action_scheduledMessageFragment_to_newMessageFragment"
+            app:destination="@id/newMessageFragment" />
+
+    </fragment>
+
+    <!-- Tela de Nova Mensagem -->
+    <fragment
+        android:id="@+id/newMessageFragment"
+        android:name="br.com.wappalarme.ui.message.NewMessageFragment"
+        android:label="Agendar Mensagem"
+        tools:layout="@layout/fragment_new_message" />
+
+    <!-- Tela de Configurações -->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="br.com.wappalarme.ui.settings.SettingsFragment"
+        android:label="Configurações"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WappAlarme</string>
+    <string name="app_description">Gerenciador de Alarmes e Mensagens WhatsApp</string>
+
+    <!-- Alarmes -->
+    <string name="alarm_title">Alarmes</string>
+    <string name="add_alarm">Adicionar alarme</string>
+    <string name="edit_alarm">Editar alarme</string>
+    <string name="delete_alarm">Remover alarme</string>
+    <string name="alarm_label_hint">Descrição do alarme</string>
+    <string name="alarm_saved">Alarme salvo com sucesso</string>
+    <string name="alarm_deleted">Alarme removido</string>
+    <string name="no_alarms">Nenhum alarme cadastrado</string>
+
+    <!-- Feriados -->
+    <string name="holiday_tomorrow">Feriado amanhã</string>
+    <string name="disable_alarms">Desativar alarmes</string>
+    <string name="keep_alarms">Manter ativos</string>
+    <string name="alarms_disabled_holiday">Alarmes desativados para o feriado</string>
+    <string name="alarms_reenabled">Alarmes reativados</string>
+
+    <!-- Mensagens WhatsApp -->
+    <string name="whatsapp_title">WhatsApp Agendado</string>
+    <string name="new_message">Nova mensagem</string>
+    <string name="select_contact">Selecionar contato</string>
+    <string name="message_hint">Digite sua mensagem...</string>
+    <string name="schedule_message">Agendar mensagem</string>
+    <string name="message_scheduled">Mensagem agendada</string>
+    <string name="message_cancelled">Mensagem cancelada</string>
+    <string name="no_messages">Nenhuma mensagem agendada</string>
+
+    <!-- Configurações -->
+    <string name="settings_title">Configurações</string>
+    <string name="city_hint">Cidade</string>
+    <string name="state_hint">Estado (UF)</string>
+    <string name="save_settings">Salvar configurações</string>
+    <string name="settings_saved">Configurações salvas</string>
+
+    <!-- Notificações -->
+    <string name="notification_holiday_title">Feriado amanhã</string>
+    <string name="notification_message_sent">Mensagem enviada</string>
+    <string name="notification_message_failed">Falha no envio</string>
+
+    <!-- Acessibilidade -->
+    <string name="accessibility_service_description">O WappAlarme usa o Serviço de Acessibilidade para enviar mensagens WhatsApp automaticamente no horário agendado, sem necessidade de interação manual.</string>
+</resources>

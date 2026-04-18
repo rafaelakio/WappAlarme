@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Declara o atributo colorBackground para compatibilidade com dependências
+        que referenciam este atributo (ex: Material Components).
+        O valor padrão é branco.
+    -->
+    <attr name="colorBackground" format="color|reference" />
+</resources>
