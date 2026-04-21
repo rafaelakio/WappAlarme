@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr format="color|reference" name="colorBackground"/>
+    <color name="background">#FAFAFA</color>
+    <color name="error_color">#B00020</color>
+    <color name="primary">#1B5E20</color>
+    <color name="primary_variant">#2E7D32</color>
+    <color name="secondary">#00897B</color>
+    <color name="secondary_variant">#00695C</color>
+    <color name="status_cancelled">#757575</color>
+    <color name="status_failed">#B00020</color>
+    <color name="status_pending">#F57C00</color>
+    <color name="status_sending">#1565C0</color>
+    <color name="status_sent">#2E7D32</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="whatsapp_dark">#128C7E</color>
+    <color name="whatsapp_green">#25D366</color>
+    <string name="accessibility_service_description">O WappAlarme usa o Serviço de Acessibilidade para enviar mensagens WhatsApp automaticamente no horário agendado, sem necessidade de interação manual.</string>
+    <string name="add_alarm">Adicionar alarme</string>
+    <string name="alarm_deleted">Alarme removido</string>
+    <string name="alarm_label_hint">Descrição do alarme</string>
+    <string name="alarm_saved">Alarme salvo com sucesso</string>
+    <string name="alarm_title">Alarmes</string>
+    <string name="alarms_disabled_holiday">Alarmes desativados para o feriado</string>
+    <string name="alarms_reenabled">Alarmes reativados</string>
+    <string name="app_description">Gerenciador de Alarmes e Mensagens WhatsApp</string>
+    <string name="app_name">WappAlarme</string>
+    <string name="city_hint">Cidade</string>
+    <string name="delete_alarm">Remover alarme</string>
+    <string name="disable_alarms">Desativar alarmes</string>
+    <string name="edit_alarm">Editar alarme</string>
+    <string name="holiday_tomorrow">Feriado amanhã</string>
+    <string name="keep_alarms">Manter ativos</string>
+    <string name="message_cancelled">Mensagem cancelada</string>
+    <string name="message_hint">Digite sua mensagem...</string>
+    <string name="message_scheduled">Mensagem agendada</string>
+    <string name="new_message">Nova mensagem</string>
+    <string name="no_alarms">Nenhum alarme cadastrado</string>
+    <string name="no_messages">Nenhuma mensagem agendada</string>
+    <string name="notification_holiday_title">Feriado amanhã</string>
+    <string name="notification_message_failed">Falha no envio</string>
+    <string name="notification_message_sent">Mensagem enviada</string>
+    <string name="save_settings">Salvar configurações</string>
+    <string name="schedule_message">Agendar mensagem</string>
+    <string name="select_contact">Selecionar contato</string>
+    <string name="settings_saved">Configurações salvas</string>
+    <string name="settings_title">Configurações</string>
+    <string name="state_hint">Estado (UF)</string>
+    <string name="whatsapp_title">WhatsApp Agendado</string>
+    <style name="Theme.WappAlarme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryContainer">@color/primary_variant</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_variant</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:statusBarColor">@color/primary_variant</item>
+        <item name="colorError">@color/error_color</item>
+    </style>
+</resources>

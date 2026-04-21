@@ -15,7 +15,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import kotlinx.coroutines.launch
 import br.com.wappalarme.databinding.FragmentNewMessageBinding
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
@@ -188,29 +192,27 @@ class NewMessageFragment : Fragment() {
     }
 
     private fun observeViewModel() {
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.uiState.collect { state ->
-                when (state) {
-                    is MessageUiState.Idle -> Unit
-                    is MessageUiState.Loading -> binding.btnScheduleMessage.isEnabled = false
-                    is MessageUiState.Success -> {
-                        Snackbar.make(binding.root, state.message, Snackbar.LENGTH_SHORT).show()
-                        viewModel.resetState()
-                        findNavController().navigateUp()
-                    }
-                    is MessageUiState.Error -> {
-                        binding.btnScheduleMessage.isEnabled = true
-                        Snackbar.make(binding.root, state.message, Snackbar.LENGTH_LONG).show()
-                        viewModel.resetState()
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.uiState.collect { state ->
+                    when (state) {
+                        is MessageUiState.Idle -> Unit
+                        is MessageUiState.Loading -> binding.btnScheduleMessage.isEnabled = false
+                        is MessageUiState.Success -> {
+                            Snackbar.make(binding.root, state.message, Snackbar.LENGTH_SHORT).show()
+                            viewModel.resetState()
+                            findNavController().navigateUp()
+                        }
+                        is MessageUiState.Error -> {
+                            binding.btnScheduleMessage.isEnabled = true
+                            Snackbar.make(binding.root, state.message, Snackbar.LENGTH_LONG).show()
+                            viewModel.resetState()
+                        }
                     }
                 }
             }
         }
     }
-
-    // Extensão para lifecycleScope.launchWhenStarted
-    private fun androidx.lifecycle.LifecycleOwner.lifecycleScope() =
-        androidx.lifecycle.lifecycleScope
 
     override fun onDestroyView() {
         super.onDestroyView()

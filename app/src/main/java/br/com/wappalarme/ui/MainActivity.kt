@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         setupNavigation()
         requestRequiredPermissions()
+        showPreviousCrashIfAny()
     }
 
     private fun setupNavigation() {
@@ -93,6 +94,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             .setNegativeButton("Agora não", null)
+            .show()
+    }
+
+    private fun showPreviousCrashIfAny() {
+        val prefs = getSharedPreferences("crash_log", MODE_PRIVATE)
+        val crash = prefs.getString("crash", null) ?: return
+        prefs.edit().remove("crash").apply()
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Erro detectado na execução anterior")
+            .setMessage(crash)
+            .setPositiveButton("OK", null)
             .show()
     }
 

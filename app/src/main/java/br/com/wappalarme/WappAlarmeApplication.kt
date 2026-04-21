@@ -16,8 +16,21 @@ class WappAlarmeApplication : Application(), Configuration.Provider {
     lateinit var workerFactory: HiltWorkerFactory
 
     override fun onCreate() {
+        installCrashHandler()
         super.onCreate()
         createNotificationChannels()
+    }
+
+    private fun installCrashHandler() {
+        val defaultHandler = Thread.getDefaultUncaughtExceptionHandler()
+        Thread.setDefaultUncaughtExceptionHandler { thread, throwable ->
+            try {
+                getSharedPreferences("crash_log", MODE_PRIVATE).edit()
+                    .putString("crash", throwable.stackTraceToString().take(5000))
+                    .apply()
+            } catch (_: Exception) {}
+            defaultHandler?.uncaughtException(thread, throwable)
+        }
     }
 
     override val workManagerConfiguration: Configuration
